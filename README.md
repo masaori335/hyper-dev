@@ -1,8 +1,10 @@
-# Docker image of dev & test hyper
+# Docker image for dev & test hyper
 
-- Details of hyper in https://github.com/Lukasa/hyper
+- Details of hyper in [hyper](https://github.com/Lukasa/hyper)
 
-This image includes below
+## Details 
+
+This image includes below packages.
 
 - openssl-1.0.2+
 - python-2.7.9+
@@ -10,8 +12,11 @@ This image includes below
   - tox
   - pytest
 
+Based on [`buildpack-deps:jessie`](https://registry.hub.docker.com/_/buildpack-deps/)
+
 ## Run Tests of hyper
 
 ```
-$ docker run -i -t -v /path/to/the/hyper:/opt/hyper hyper-dev:v0.0.1 make test
+$ cd /PATH/TO/THE/HYPER/
+$ docker run -i -t -v $PWD:/opt/hyper masaori/hyper-dev:latest make test
 ```
